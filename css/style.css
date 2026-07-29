@@ -881,3 +881,52 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .footer .ph-data{color:var(--gold-lt);background:rgba(215,154,31,.14);border-color:rgba(215,154,31,.42)}
 /* linha de apoio do CTA escuro — antes era cor inline e sumia no fundo preto */
 .cta-note{margin-top:1.6rem;font-size:.8rem;color:rgba(255,255,255,.42)}
+
+/* ═══════════════ DEPOIMENTOS EM MARQUÊS ════════════════════
+   ⚠ Conteúdo fictício — ver comentário no index.html.
+   Duas fileiras em sentidos opostos; cada trilha repete a própria
+   lista para o translateX(-50%) fechar o laço sem emenda.
+   ═══════════════════════════════════════════════════════════ */
+.testi-marquee{
+  --tgap:1rem;
+  display:flex;flex-direction:column;gap:var(--tgap);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+}
+.testi-row{overflow:hidden}
+.testi-rail{
+  display:flex;gap:var(--tgap);width:max-content;padding-right:var(--tgap);
+  animation:testi-scroll var(--dur,64s) linear infinite;will-change:transform;
+}
+.testi-row--back .testi-rail{animation-direction:reverse}
+@keyframes testi-scroll{to{transform:translateX(-50%)}}
+/* pausa para ler — inclusive por teclado */
+.testi-marquee:hover .testi-rail,
+.testi-marquee:focus-within .testi-rail{animation-play-state:paused}
+
+.tq{
+  flex:0 0 clamp(18rem,25vw,22rem);
+  display:flex;flex-direction:column;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(1.4rem,2.2vw,1.9rem);
+  box-shadow:0 1px 2px rgba(17,17,17,.03),0 18px 36px -30px rgba(17,17,17,.4);
+}
+.tq__m{display:block;height:.5em;margin-bottom:.5rem;
+  font-family:var(--serif);font-weight:600;font-size:2.4rem;line-height:1;color:var(--gold)}
+.tq__t{font-size:.92rem;line-height:1.7;color:var(--ink-dim);flex:1}
+.tq__a{display:flex;align-items:center;gap:.8rem;margin-top:1.2rem;padding-top:1rem;
+  border-top:1px solid var(--line-soft)}
+/* monograma no lugar de retrato: nenhuma foto de pessoa real entra aqui */
+.tq__av{flex:none;display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;
+  font-family:var(--sans);font-weight:700;font-size:.76rem;letter-spacing:.03em;
+  color:#fff;background:linear-gradient(145deg,var(--gold-lt),var(--gold))}
+.tq__n{display:block;font-weight:600;font-size:.88rem;line-height:1.35;color:var(--ink)}
+.tq__r{display:block;font-size:.74rem;line-height:1.45;color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){
+  .testi-marquee{-webkit-mask-image:none;mask-image:none;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+  .testi-row{overflow:visible;display:contents}
+  .testi-rail{display:contents;animation:none}
+  .tq[aria-hidden="true"]{display:none}
+}
