@@ -6,35 +6,39 @@
    ═══════════════════════════════════════════════════════════ */
 
 :root{
-  /* Paleta definida no briefing v2 */
-  --black:#141414;          /* deep charcoal */
-  --graphite:#1c1c1c;
-  --graphite-2:#242424;     /* dark accent */
-  --line:rgba(255,255,255,.1);
-  --line-soft:rgba(255,255,255,.055);
-  --ink:#F8F7F3;            /* warm white */
-  --ink-dim:#c3c1bb;
-  --muted:#8d8b85;
-  --navy:#1a1e24;
-  --gold:#C99A4A;           /* warm bronze accent */
-  --gold-2:#e0bd82;
-  --gold-16:rgba(201,154,74,.16);
-  --gold-30:rgba(201,154,74,.30);
-  --ember:#b05f33;
-  --wood:#8a5a35;
-  --paper:#F8F7F3;          /* warm white */
+  /* Paleta do musicando-poemas: branco, preto, dourado, cinza claro.
+     Os NOMES dos tokens foram mantidos para não quebrar as regras existentes —
+     o que mudou foi o valor. O site inteiro virou claro; só o CTA final e o
+     rodapé continuam escuros, que é o mesmo contraste do musicando. */
+  --black:#FFFFFF;          /* fundo padrão */
+  --graphite:#F6F6F6;       /* faixa alternada */
+  --graphite-2:#FFFFFF;
+  --dark:#111111;           /* blocos escuros: CTA final e rodapé */
+  --line:rgba(17,17,17,.12);
+  --line-soft:rgba(17,17,17,.06);
+  --ink:#111111;
+  --ink-dim:rgba(17,17,17,.58);
+  --muted:rgba(17,17,17,.38);
+  --navy:#F6F6F6;
+  --gold:#D79A1F;
+  --gold-2:#A9760F;         /* dourado escuro: o claro não tem contraste no branco */
+  --gold-lt:#E9B84F;
+  --gold-16:rgba(215,154,31,.12);
+  --gold-30:rgba(215,154,31,.24);
+  --ember:#B3432A;
+  --wood:#A9760F;
+  --paper:#F6F6F6;
   --paper-2:#FFFFFF;
-  --concrete:#D9D9D6;       /* concrete gray */
-  --paper-ink:#141414;
-  --paper-muted:#727272;    /* medium gray */
-  --paper-line:rgba(20,20,20,.12);
+  --concrete:#F6F6F6;
+  --paper-ink:#111111;
+  --paper-muted:rgba(17,17,17,.58);
+  --paper-line:rgba(17,17,17,.12);
 
   --serif:"Fraunces",ui-serif,Georgia,serif;
   --sans:"Manrope",system-ui,sans-serif;
 
   --container:1280px;
   --gut:clamp(20px,5vw,64px);
-  /* Ritmo editorial: seções respiram como no musicando-poemas */
   --sec:clamp(5rem,11vw,9.5rem);
   --nav-h:76px;
   --ease:cubic-bezier(.22,.61,.36,1);
@@ -109,7 +113,7 @@ p{margin:0;color:var(--ink-dim)}
 .btn-primary:hover{background:var(--gold-2)}
 .btn-outline{border-color:var(--line);color:var(--ink)}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold-2)}
-.btn-outline-light{border-color:rgba(255,255,255,.22)}
+.btn-outline-light{border-color:var(--line)}
 .btn-block{width:100%}
 .btn-sm{padding:11px 22px;font-size:.8rem}
 .btn-row{display:flex;flex-wrap:wrap;gap:14px}
@@ -129,9 +133,9 @@ p{margin:0;color:var(--ink-dim)}
   max-width:var(--container);margin:0 auto;padding:18px var(--gut);
   display:flex;align-items:center;justify-content:space-between;gap:20px;
 }
-.nav.is-scrolled{background:rgba(20,20,20,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)}
+.nav.is-scrolled{background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)}
 /* Páginas internas começam com fundo: o nav já nasce sólido */
-.nav--solid{background:rgba(20,20,20,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)}
+.nav--solid{background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)}
 
 .brand{display:flex;align-items:center;gap:10px;flex:none}
 .brand-mark{
@@ -169,7 +173,7 @@ body.nav-open .nav-burger span:nth-child(3){transform:translateY(-6.5px) rotate(
 
 /* Gaveta mobile */
 .nav-drawer{
-  position:fixed;inset:0;z-index:99;background:rgba(20,20,20,.97);backdrop-filter:blur(20px);
+  position:fixed;inset:0;z-index:99;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);
   display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 var(--gut);
   opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s;
 }
@@ -192,20 +196,20 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .hero{
   position:relative;overflow:hidden;
   padding:calc(var(--nav-h) + clamp(2.5rem,7vh,5.5rem)) 0 clamp(3rem,8vh,6rem);
-  background:radial-gradient(130% 120% at 78% -10%,#232228 0%,var(--black) 58%);
+  background:radial-gradient(130% 120% at 78% -10%,#FBFAF8 0%,var(--black) 60%);
 }
 .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
 .hero-bg-tex{position:absolute;inset:0;opacity:.5}
 .tex-blueprint{
   background-image:
-    linear-gradient(rgba(120,150,200,.07) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(120,150,200,.07) 1px,transparent 1px);
+    linear-gradient(rgba(17,17,17,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(17,17,17,.05) 1px,transparent 1px);
   background-size:64px 64px;
   mask-image:radial-gradient(80% 70% at 30% 40%,#000 0%,transparent 78%);
 }
 .tex-light{
-  background:radial-gradient(55% 50% at 12% 12%,rgba(201,154,74,.16),transparent 62%),
-             radial-gradient(45% 40% at 92% 82%,rgba(176,95,51,.1),transparent 62%);
+  background:radial-gradient(55% 50% at 12% 12%,rgba(215,154,31,.10),transparent 62%),
+             radial-gradient(45% 40% at 92% 82%,rgba(215,154,31,.06),transparent 62%);
 }
 
 .hero-split{
@@ -234,7 +238,7 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .hero-art figcaption{
   position:absolute;left:20px;bottom:20px;z-index:1;
   font-size:.74rem;line-height:1.5;color:var(--ink-dim);
-  background:rgba(20,20,20,.5);backdrop-filter:blur(8px);
+  background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
   border:1px solid var(--line);border-radius:10px;padding:9px 13px;
 }
 .hero-art figcaption span{display:block;font-family:var(--serif);font-size:.94rem;color:var(--ink)}
@@ -249,20 +253,20 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .page-hero{
   position:relative;overflow:hidden;
   padding:calc(var(--nav-h) + clamp(3.5rem,9vh,6.5rem)) 0 clamp(3rem,7vh,5rem);
-  background:radial-gradient(120% 130% at 50% -10%,#1c1b24 0%,var(--black) 62%);
+  background:radial-gradient(120% 130% at 50% -10%,#FBFAF8 0%,var(--black) 62%);
 }
 .page-hero::before{
   content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
   background-image:
-    linear-gradient(rgba(120,150,200,.07) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(120,150,200,.07) 1px,transparent 1px);
+    linear-gradient(rgba(17,17,17,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(17,17,17,.05) 1px,transparent 1px);
   background-size:64px 64px;
   mask-image:radial-gradient(75% 80% at 50% 0%,#000,transparent 78%);
 }
 .page-hero::after{
   content:"";position:absolute;left:50%;top:-40%;width:min(110%,1300px);aspect-ratio:2/1;
   transform:translateX(-50%);pointer-events:none;
-  background:radial-gradient(closest-side,rgba(201,151,63,.15),transparent 70%);
+  background:radial-gradient(closest-side,rgba(215,154,31,.15),transparent 70%);
 }
 .page-hero .container{position:relative;z-index:1}
 .crumb{display:flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:.06em;color:var(--muted);margin-bottom:22px}
@@ -297,9 +301,9 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .tilt-grid::before{
   content:"";position:absolute;inset:-8% -6%;z-index:-1;pointer-events:none;filter:blur(30px);
   background:
-    radial-gradient(38% 45% at 15% 15%,rgba(201,151,63,.20),transparent 70%),
+    radial-gradient(38% 45% at 15% 15%,rgba(215,154,31,.20),transparent 70%),
     radial-gradient(32% 40% at 92% 85%,rgba(14,26,43,.16),transparent 70%),
-    radial-gradient(26% 30% at 75% 10%,rgba(193,85,42,.14),transparent 70%);
+    radial-gradient(26% 30% at 75% 10%,rgba(215,154,31,0.07),transparent 70%);
 }
 .tilt-card{
   position:relative;border-radius:26px;overflow:hidden;
@@ -429,7 +433,7 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .ba-before{clip-path:inset(0 48% 0 0)}
 .ba-label{position:absolute;top:20px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
 .ba-label-after{right:20px;background:rgba(23,22,26,.1);color:var(--paper-ink)}
-.ba-label-before{left:20px;background:rgba(20,20,20,.55);color:var(--ink)}
+.ba-label-before{left:20px;background:rgba(17,17,17,.62);color:#fff}
 .ba-handle{
   position:absolute;top:0;bottom:0;left:52%;width:2px;background:var(--paper);
   display:flex;align-items:center;justify-content:center;transform:translateX(-1px);
@@ -470,7 +474,7 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .towns{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(3rem,7vw,5rem)}
 .towns li{
   display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--ink-dim);
-  border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:rgba(255,255,255,.03);
+  border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--paper-2);
 }
 .towns .ic{color:var(--gold);width:15px;height:15px}
 
@@ -479,8 +483,8 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .final-cta-bg{
   position:absolute;inset:0;
   background:
-    radial-gradient(60% 60% at 15% 10%,rgba(201,151,63,.16),transparent 60%),
-    radial-gradient(50% 50% at 90% 85%,rgba(193,85,42,.14),transparent 60%),
+    radial-gradient(60% 60% at 15% 10%,rgba(215,154,31,.16),transparent 60%),
+    radial-gradient(50% 50% at 90% 85%,rgba(215,154,31,0.07),transparent 60%),
     var(--black);
 }
 .final-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,4rem);align-items:start}
@@ -492,14 +496,14 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .final-contact-info .ic{color:var(--gold)}
 
 .final-form{
-  background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:22px;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:22px;
   padding:clamp(24px,4vw,40px);backdrop-filter:blur(16px);
   display:flex;flex-direction:column;gap:16px;
 }
 .field{display:flex;flex-direction:column;gap:8px}
 .field label{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .field input,.field select,.field textarea{
-  background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:10px;
   padding:13px 15px;color:var(--ink);font-family:var(--sans);font-size:.94rem;resize:vertical;
 }
 .field textarea{min-height:7rem}
@@ -512,7 +516,7 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .cta-band::before{
   content:"";position:absolute;left:50%;top:-50%;width:min(110%,1200px);aspect-ratio:2/1;
   transform:translateX(-50%);pointer-events:none;
-  background:radial-gradient(closest-side,rgba(201,151,63,.16),transparent 70%);
+  background:radial-gradient(closest-side,rgba(215,154,31,.16),transparent 70%);
 }
 .cta-band .container{position:relative}
 .cta-band h2{font-size:clamp(1.9rem,4vw,3rem);max-width:20ch;margin:0 auto 1.1rem}
@@ -636,8 +640,8 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
   background:linear-gradient(165deg,rgba(20,20,20,.55) 0%,rgba(20,20,20,.86) 58%,rgba(20,20,20,.95) 100%)}
 /* L3 — malha arquitetônica */
 .c3d__arch{position:absolute;inset:0;transform:translateZ(12px);opacity:.5;
-  background-image:linear-gradient(rgba(201,154,74,.1) 1px,transparent 1px),
-                   linear-gradient(90deg,rgba(201,154,74,.1) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(215,154,31,.1) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(215,154,31,.1) 1px,transparent 1px);
   background-size:38px 38px;
   mask-image:radial-gradient(120% 90% at 85% 10%,#000,transparent 72%)}
 /* luz que segue o ponteiro — variáveis alimentadas pelo JS */
@@ -660,7 +664,7 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .c3d:hover .c3d__cta svg{transform:translateX(5px)}
 .c3d__in::after{content:"";position:absolute;inset:0;border-radius:24px;pointer-events:none;
   border:1px solid transparent;transition:border-color .6s}
-.c3d:hover .c3d__in::after{border-color:rgba(201,154,74,.22)}
+.c3d:hover .c3d__in::after{border-color:rgba(215,154,31,.22)}
 
 /* materiais por serviço */
 .m-wood{background:repeating-linear-gradient(97deg,#3b2f21 0 2px,#2a2118 2px 46px),linear-gradient(150deg,#4a3a26,#221a12)}
@@ -671,8 +675,8 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .m-tile{background:linear-gradient(rgba(0,0,0,.4) 1px,transparent 1px) 0 0/54px 54px,
   linear-gradient(90deg,rgba(0,0,0,.4) 1px,transparent 1px) 0 0/54px 54px,
   linear-gradient(155deg,#3a3a3f,#26262a 55%,#42413c)}
-.m-general{background:linear-gradient(rgba(201,154,74,.14) 1px,transparent 1px) 0 0/30px 30px,
-  linear-gradient(90deg,rgba(201,154,74,.14) 1px,transparent 1px) 0 0/30px 30px,
+.m-general{background:linear-gradient(rgba(215,154,31,.14) 1px,transparent 1px) 0 0/30px 30px,
+  linear-gradient(90deg,rgba(215,154,31,.14) 1px,transparent 1px) 0 0/30px 30px,
   linear-gradient(150deg,#2b2b30,#1a1a1d)}
 
 /* ── Why choose us ──────────────────────────────────────── */
@@ -684,7 +688,7 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .why-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .why-card{background:var(--paper-2);border:1px solid var(--paper-line);border-radius:18px;
   padding:clamp(20px,2.2vw,28px);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
-.why-card:hover{transform:translateY(-4px);box-shadow:0 24px 44px -30px rgba(20,20,20,.45)}
+.why-card:hover{transform:translateY(-4px);box-shadow:0 24px 44px -30px rgba(17,17,17,.28)}
 .why-card .ic{width:22px;height:22px;color:var(--gold);margin-bottom:14px}
 .why-card h3{font-size:1.06rem;margin-bottom:.5rem}
 .why-card p{font-size:.88rem;line-height:1.65;color:var(--paper-muted)}
@@ -708,7 +712,7 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .testi{background:var(--black);padding:var(--sec) 0}
 .testi-empty{
   border:1px dashed var(--line);border-radius:20px;padding:clamp(2rem,5vw,3.5rem);
-  text-align:center;max-width:44rem;margin:0 auto;background:rgba(255,255,255,.02);
+  text-align:center;max-width:44rem;margin:0 auto;background:var(--paper-2);
 }
 .testi-empty .ic{width:26px;height:26px;color:var(--gold);margin:0 auto 1.1rem}
 .testi-empty h3{font-size:1.3rem;margin-bottom:.8rem}
@@ -748,13 +752,13 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
 .field-err{font-size:.76rem;color:#e08b6a;min-height:1em}
 .form__status{font-size:.85rem;line-height:1.6;padding:.9rem 1.1rem;border-radius:10px;display:none}
 .form__status.is-on{display:block}
-.form__status.ok{background:rgba(201,154,74,.12);border:1px solid var(--gold-30);color:var(--gold-2)}
-.form__status.bad{background:rgba(176,95,51,.14);border:1px solid rgba(176,95,51,.4);color:#e5a184}
+.form__status.ok{background:rgba(215,154,31,.12);border:1px solid var(--gold-30);color:var(--gold-2)}
+.form__status.bad{background:rgba(215,154,31,0.07);border:1px solid rgba(215,154,31,0.07);color:#e5a184}
 
 /* ── Placeholder de dado que falta ──────────────────────── */
 .ph-data{
   font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.04em;
-  color:var(--gold-2);background:rgba(201,154,74,.1);
+  color:var(--gold-2);background:rgba(215,154,31,.1);
   border:1px dashed var(--gold-30);border-radius:6px;padding:2px 8px;white-space:nowrap;
 }
 .footer .ph-data{font-size:.78rem}
@@ -784,3 +788,96 @@ body.nav-open .nav-drawer{opacity:1;visibility:visible}
   .c3d__light{display:none}
   .faq-a{transition:none}
 }
+
+/* ═══════════════════════════════════════════════════════════
+   PALETA CLARA — ajustes que o remapeamento de token não cobre
+   Tudo aqui existe porque a regra original assumia fundo escuro.
+   ═══════════════════════════════════════════════════════════ */
+
+::selection{background:var(--gold);color:#fff}
+/* musicando é "nada de ruído": o granulado sujava o branco */
+.grain{display:none}
+
+/* ── Eyebrow no padrão do musicando: rótulo neutro, filete dourado ── */
+.eyebrow{color:var(--muted)}
+.eyebrow::before{background:var(--gold)}
+.why .eyebrow,.faq .eyebrow,.before-after .eyebrow{color:var(--muted)}
+.why .eyebrow::before,.faq .eyebrow::before,.before-after .eyebrow::before{background:var(--gold)}
+.phrase em{color:var(--gold-2)}
+
+/* ── Cards 3D: vidro claro em vez de vidro escuro ── */
+.c3d__in{
+  background:linear-gradient(160deg,#FFFFFF,#FCFCFB);
+  border-color:var(--line-soft);
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+  box-shadow:0 2px 3px rgba(17,17,17,.03),0 24px 50px -34px rgba(17,17,17,.32);
+}
+.c3d:hover .c3d__in,.c3d:focus-within .c3d__in{
+  border-color:var(--gold-30);
+  box-shadow:0 2px 3px rgba(17,17,17,.03),0 44px 80px -38px rgba(17,17,17,.4);
+}
+/* a textura do material vira um traço de fundo, não a cor do card */
+.c3d__tex{opacity:.13}
+.c3d:hover .c3d__tex{opacity:.19}
+.c3d__veil{background:linear-gradient(to top,
+  rgba(255,255,255,.975) 22%,rgba(255,255,255,.82) 58%,rgba(255,255,255,.55) 100%)}
+.c3d__arch{opacity:.55;
+  background-image:linear-gradient(rgba(215,154,31,.16) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(215,154,31,.16) 1px,transparent 1px)}
+.c3d__light{background:radial-gradient(28% 34% at var(--px,50%) var(--py,50%),
+  rgba(215,154,31,.18),transparent 72%)}
+.c3d__cat{color:var(--gold-2)}
+.c3d__icon{color:var(--gold);filter:drop-shadow(0 6px 14px rgba(17,17,17,.14))}
+.c3d__t{color:var(--ink)}
+.c3d__d{color:var(--ink-dim)}
+.c3d__cta{color:var(--gold-2)}
+
+/* ── Legendas sobre foto continuam claras: o fundo delas é a imagem ── */
+.proj-cap{color:#fff}
+.proj-cap i{color:var(--gold-lt)}
+.svc-n{color:var(--gold-lt);background:rgba(17,17,17,.55);border-color:rgba(255,255,255,.18)}
+
+/* ── Elementos que sumiam por serem claros sobre claro ── */
+.step__n{background:var(--paper-2)}
+.services-dots span{background:rgba(17,17,17,.18)}
+.services-dots span.is-active{background:var(--gold)}
+.testi{background:var(--graphite)}
+.map-blueprint{
+  background:
+    linear-gradient(rgba(215,154,31,.16) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(215,154,31,.16) 1px,transparent 1px),
+    radial-gradient(120% 100% at 30% 20%,#FFFFFF,#F1EFEA 68%);
+  background-size:40px 40px,40px 40px,100% 100%;
+}
+.area-map{box-shadow:0 30px 60px -38px rgba(17,17,17,.35),0 0 0 1px var(--line-soft)}
+.map-pin{color:var(--gold)}
+.field-err{color:var(--ember)}
+.form__status.ok{background:var(--gold-16);border-color:var(--gold-30);color:var(--gold-2)}
+.form__status.bad{background:rgba(179,67,42,.08);border-color:rgba(179,67,42,.32);color:#8f3520}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
+.hero-art figcaption{color:var(--ink-dim);border-color:var(--line)}
+
+/* ── Os dois blocos escuros, como no musicando ── */
+.cta-band{background:var(--dark)}
+.cta-band::before{background:radial-gradient(closest-side,rgba(215,154,31,.22),transparent 70%)}
+.cta-band h2{color:#fff}
+.cta-band p{color:rgba(255,255,255,.6)}
+.cta-band .eyebrow{color:rgba(255,255,255,.5)}
+.cta-band .eyebrow::before{background:var(--gold)}
+.cta-band .btn-outline{border-color:rgba(255,255,255,.24);color:#fff}
+.cta-band .btn-outline:hover{border-color:var(--gold);color:var(--gold-lt)}
+
+.footer{background:var(--dark);border-top:0;color:rgba(255,255,255,.6)}
+.footer .brand-word{color:#fff}
+.footer .brand-mark{color:var(--gold-lt);border-color:rgba(215,154,31,.55)}
+.footer-top{border-bottom-color:rgba(255,255,255,.1)}
+.footer-about p{color:rgba(255,255,255,.55)}
+.footer-col h4{color:var(--gold-lt)}
+.footer-col a,.footer-col span{color:rgba(255,255,255,.7)}
+.footer-col a:hover{color:var(--gold-lt)}
+.footer-col .ic{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08)}
+.footer-bottom p{color:rgba(255,255,255,.35)}
+.footer .ph-data{color:var(--gold-lt);background:rgba(215,154,31,.14);border-color:rgba(215,154,31,.42)}
+/* linha de apoio do CTA escuro — antes era cor inline e sumia no fundo preto */
+.cta-note{margin-top:1.6rem;font-size:.8rem;color:rgba(255,255,255,.42)}
