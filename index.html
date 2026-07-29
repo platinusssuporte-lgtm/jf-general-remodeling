@@ -115,40 +115,35 @@
 <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section class="hero" id="hero">
-    <div class="hero-sticky">
-      <div class="hero-bg">
-        <div class="hero-bg-tex tex-blueprint"></div>
-        <div class="hero-bg-tex tex-light"></div>
-      </div>
-      <div class="hero-frame">
-        <div class="hero-media" id="heroMedia">
-          <div class="media-plate plate-before"><img src="assets/hero-before.jpg" alt="Bathroom before the remodel"></div>
-          <div class="media-plate plate-during"><img src="assets/svc-drywall.jpg" alt="Remodel in progress — drywall framing" loading="lazy" decoding="async"></div>
-          <div class="media-plate plate-after"><img src="assets/hero-after.jpg" alt="Bathroom finished by JF General Remodeling" loading="lazy" decoding="async"></div>
-          <div class="media-scrim"></div>
-          <div class="media-scan"></div>
-        </div>
-      </div>
-      <div class="hero-copy">
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg-tex tex-blueprint"></div>
+      <div class="hero-bg-tex tex-light"></div>
+    </div>
+    <div class="container hero-split">
+      <div class="hero-txt">
         <span class="eyebrow">Serving Philadelphia and Nearby Areas</span>
-        <h1 class="hero-title" id="heroTitle">
-          <span data-i="0" class="active">Expert Remodeling.<br>Built Around Your Vision.</span>
-          <span data-i="1">Professional Remodeling<br>for Better Spaces.</span>
-          <span data-i="2">Details Make<br>the Difference.</span>
-          <span data-i="3">Your Vision.<br>Carefully Built.</span>
-          <span data-i="4" class="is-logo">JF General<br>Remodeling</span>
-        </h1>
-        <ul class="hero-checklist" id="heroChecklist">
-          <li>Free Estimates</li><li>Professional Service</li><li>Quality Craftsmanship</li>
-          <li>Drywall</li><li>Painting</li><li>Flooring</li><li>Tile</li><li>Finish Carpentry</li>
-        </ul>
-        <p class="hero-institutional" id="heroInstitutional">
-          JF General Remodeling provides dependable remodeling, drywall, painting, flooring, tile
-          and finish carpentry services throughout Philadelphia and surrounding areas.
+        <h1>Expert Remodeling.<br>Built Around <em>Your Vision.</em></h1>
+        <p class="hero-lead">
+          JF General Remodeling provides dependable remodeling, drywall, painting, flooring,
+          tile and finish carpentry services throughout Philadelphia and surrounding areas.
         </p>
-        <div class="hero-scroll-cue"><span>Scroll to see the transformation</span><i></i></div>
+        <div class="btn-row">
+          <a href="/contact" class="btn btn-primary" data-magnetic>Get a Free Estimate</a>
+          <a href="/services" class="btn btn-outline">Explore Our Services</a>
+        </div>
+        <ul class="hero-trust">
+          <li><svg class="ic"><use href="#i-check"/></svg>Free Estimates</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Quality Workmanship</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Philadelphia Area Service</li>
+        </ul>
       </div>
+
+      <figure class="hero-art">
+        <img src="assets/hero-after.jpg" alt="Bathroom finished by JF General Remodeling"
+             fetchpriority="high" width="1600" height="1200">
+        <figcaption><span>Bathroom remodel</span>Philadelphia area</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -156,12 +151,12 @@
   <section class="trust" aria-label="What we offer">
     <div class="container">
       <ul>
-        <li><svg class="ic"><use href="#i-check"/></svg>Free Estimates</li>
-        <li><svg class="ic"><use href="#i-check"/></svg>Quality Workmanship</li>
-        <li><svg class="ic"><use href="#i-check"/></svg>Residential Remodeling</li>
-        <li><svg class="ic"><use href="#i-check"/></svg>Philadelphia Area Service</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Residential and Commercial</li>
         <li><svg class="ic"><use href="#i-check"/></svg>Clear Communication</li>
         <li><svg class="ic"><use href="#i-check"/></svg>Attention to Detail</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Organized Job Sites</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Interior and Exterior Work</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Free Site Visits</li>
       </ul>
     </div>
   </section>

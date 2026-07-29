@@ -61,69 +61,6 @@
     els.forEach(function(el){ io.observe(el); });
   })();
 
-  /* ---------- HERO: expansão controlada pelo scroll ---------- */
-  var updateHero = (function(){
-    var hero  = $("#hero");
-    var media = $("#heroMedia");
-    var title = $("#heroTitle");
-    if (!hero || !media || !title) return null;
-
-    var titleSpans   = $$("span", title);
-    var checklist    = $("#heroChecklist");
-    var checkItems   = checklist ? $$("li", checklist) : [];
-    var institution  = $("#heroInstitutional");
-    var scrollCue    = $(".hero-scroll-cue");
-    var mediaScan    = $(".media-scan");
-    var plateBefore  = $(".plate-before");
-    var plateDuring  = $(".plate-during");
-    var plateAfter   = $(".plate-after");
-
-    var MIN_W = 52, MAX_W = 100;
-    var MIN_H = 56, MAX_H = 100;
-    var MIN_R = 26, MAX_R = 0;
-
-    /* no reduced-motion o hero é estático: mostra o estado final e sai */
-    if (reduceMotion){
-      titleSpans.forEach(function(s, i){ s.classList.toggle("active", i === 0); });
-      if (checklist) checklist.classList.add("is-visible");
-      checkItems.forEach(function(li){ li.classList.add("show"); });
-      if (institution) institution.classList.add("is-visible");
-      if (plateAfter) plateAfter.style.opacity = 1;
-      return null;
-    }
-
-    return function(){
-      var rect  = hero.getBoundingClientRect();
-      var total = hero.offsetHeight - window.innerHeight;
-      var p     = total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
-
-      media.style.width  = lerp(MIN_W, MAX_W, p) + "vw";
-      media.style.height = lerp(MIN_H, MAX_H, p) + "vh";
-      media.style.borderRadius = lerp(MIN_R, MAX_R, p) + "px";
-
-      if (mediaScan){
-        mediaScan.style.transform = "translateX(" + lerp(-120, 120, clamp(p * 2.2, 0, 1)) + "%)";
-      }
-      if (plateBefore && plateDuring && plateAfter){
-        plateBefore.style.opacity = 1 - clamp(p / .4, 0, 1);
-        plateDuring.style.opacity = 1 - Math.abs(p - .55) / .35;
-        plateAfter.style.opacity  = clamp((p - .65) / .35, 0, 1);
-      }
-
-      var idx = Math.min(titleSpans.length - 1, Math.floor(p * titleSpans.length));
-      titleSpans.forEach(function(s, i){ s.classList.toggle("active", i === idx); });
-
-      if (checklist){
-        var clP = clamp((p - .1) / .45, 0, 1);
-        checklist.classList.toggle("is-visible", clP > .02 && p < .92);
-        var show = Math.round(clP * checkItems.length);
-        checkItems.forEach(function(li, i){ li.classList.toggle("show", i < show); });
-      }
-      if (institution) institution.classList.toggle("is-visible", p > .68 && p < .96);
-      if (scrollCue) scrollCue.style.opacity = p > .05 ? 0 : 1;
-    };
-  })();
-
   /* ---------- SERVIÇOS: pilha sticky ---------- */
   var updateServices = (function(){
     var stack = $("#servicesStack");
@@ -157,7 +94,7 @@
 
   /* ---------- laço mestre de scroll ---------- */
   (function scrollLoop(){
-    var jobs = [updateHero, updateServices].filter(Boolean);
+    var jobs = [updateServices].filter(Boolean);
     if (!jobs.length) return;
     var ticking = false;
     function run(){
