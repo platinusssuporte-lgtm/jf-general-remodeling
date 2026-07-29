@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jf-general-remodeling.vercel.app/sitemap.xml
