@@ -210,29 +210,111 @@
     });
   })();
 
-  /* ---------- CARDS 3D ---------- */
-  (function tilt(){
-    var cards = $$(".tilt-card");
+  /* ---------- CARDS 3D: tilt + luz que segue o ponteiro ---------- */
+  (function cards3d(){
+    var cards = $$(".c3d");
     if (!cards.length) return;
-    if (!window.matchMedia("(pointer: fine)").matches || reduceMotion) return;
-    var MAX = 10;
+
+    /* toque e reduced-motion recebem o card estático: todo o texto já está
+       visível, o 3D é enfeite e nunca condição para ler nada */
+    if (reduceMotion || !window.matchMedia("(pointer: fine)").matches) return;
+
+    var MAX_X = 6, MAX_Y = 8;
+
     cards.forEach(function(card){
-      card.addEventListener("mousemove", function(e){
-        var r = card.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width;
-        var y = (e.clientY - r.top) / r.height;
-        card.style.transform = "perspective(1200px) rotateX(" + ((.5 - y) * MAX * 2) +
-                               "deg) rotateY(" + ((x - .5) * MAX * 2) + "deg)";
-        card.style.setProperty("--mx", (x * 100) + "%");
-        card.style.setProperty("--my", (y * 100) + "%");
+      var inner = $(".c3d__in", card);
+      if (!inner) return;
+      var frame = null, rect = null;
+
+      function apply(e){
+        rect = rect || card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width;
+        var y = (e.clientY - rect.top) / rect.height;
+        if (frame) return;                       /* um write por quadro */
+        frame = requestAnimationFrame(function(){
+          frame = null;
+          inner.style.setProperty("--rx", ((0.5 - y) * MAX_X * 2).toFixed(2) + "deg");
+          inner.style.setProperty("--ry", ((x - 0.5) * MAX_Y * 2).toFixed(2) + "deg");
+          inner.style.setProperty("--sc", "1.018");
+          inner.style.setProperty("--px", (x * 100).toFixed(1) + "%");
+          inner.style.setProperty("--py", (y * 100).toFixed(1) + "%");
+          inner.style.setProperty("--lit", "1");
+        });
+      }
+      function reset(){
+        if (frame){ cancelAnimationFrame(frame); frame = null; }
+        rect = null;
+        inner.style.setProperty("--rx", "0deg");
+        inner.style.setProperty("--ry", "0deg");
+        inner.style.setProperty("--sc", "1");
+        inner.style.setProperty("--lit", "0");
+      }
+      card.addEventListener("pointermove", apply, { passive: true });
+      card.addEventListener("pointerleave", reset, { passive: true });
+      /* o rect vira inválido quando a página rola ou muda de tamanho */
+      window.addEventListener("scroll", function(){ rect = null; }, { passive: true });
+      window.addEventListener("resize", function(){ rect = null; }, { passive: true });
+    });
+  })();
+
+  /* ---------- BOTÕES MAGNÉTICOS ---------- */
+  (function magnetic(){
+    var els = $$("[data-magnetic]");
+    if (!els.length || reduceMotion || !window.matchMedia("(pointer: fine)").matches) return;
+    els.forEach(function(el){
+      var frame = null;
+      el.addEventListener("pointermove", function(e){
+        if (frame) return;
+        frame = requestAnimationFrame(function(){
+          frame = null;
+          var r = el.getBoundingClientRect();
+          var dx = (e.clientX - (r.left + r.width / 2)) * .22;
+          var dy = (e.clientY - (r.top + r.height / 2)) * .3;
+          el.classList.add("is-pulled");
+          el.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px)";
+        });
+      }, { passive: true });
+      el.addEventListener("pointerleave", function(){
+        if (frame){ cancelAnimationFrame(frame); frame = null; }
+        el.classList.remove("is-pulled");
+        el.style.transform = "";
+      }, { passive: true });
+    });
+  })();
+
+  /* ---------- TEXT REVEAL das frases ---------- */
+  (function phrases(){
+    var els = $$("[data-lines]");
+    if (!els.length) return;
+    if (reduceMotion || !("IntersectionObserver" in window)){
+      els.forEach(function(el){ el.classList.add("is-revealed"); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        e.target.classList.add("is-revealed");
+        io.unobserve(e.target);
       });
-      card.addEventListener("mouseleave", function(){
-        card.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg)";
+    }, { threshold: .4 });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  /* ---------- FAQ ---------- */
+  (function faq(){
+    var qs = $$(".faq-q");
+    if (!qs.length) return;
+    qs.forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var open = btn.getAttribute("aria-expanded") === "true";
+        /* uma resposta aberta por vez mantém a lista escaneável */
+        qs.forEach(function(o){ o.setAttribute("aria-expanded", "false"); });
+        btn.setAttribute("aria-expanded", open ? "false" : "true");
       });
     });
   })();
 
-  /* ---------- FORMULÁRIO (sem backend: monta um e-mail) ---------- */
+  /* ---------- FORMULÁRIO DE ORÇAMENTO ---------- */
   (function quoteForm(){
     var form = $("#quoteForm");
     if (!form) return;
@@ -240,32 +322,67 @@
 
     /* form.elements.namedItem, e não form.name: em HTMLFormElement `name` é
        propriedade do próprio formulário e engoliria o campo de mesmo nome. */
-    var field = function(n){ return form.elements.namedItem(n); };
+    function field(n){ return form.elements.namedItem(n); }
+    function wrap(el){ return el ? el.closest(".field") : null; }
+
+    function setErr(name, msg){
+      var el = field(name), box = wrap(el);
+      if (!box) return;
+      box.classList.toggle("is-bad", !!msg);
+      var slot = $(".field-err", box);
+      if (slot) slot.textContent = msg || "";
+    }
+    function say(msg, kind){
+      if (!status) return;
+      status.textContent = msg;
+      status.className = "form__status is-on " + kind;
+    }
+
+    var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    var PHONE = /[\d][\d\s().+-]{6,}/;
 
     form.addEventListener("submit", function(e){
       e.preventDefault();
-      var name    = field("name").value.trim();
-      var contact = field("contact").value.trim();
-      var service = field("service").value;
-      var message = field("message").value.trim();
+      var v = {};
+      ["name","phone","email","location","service","details","contact","consent"].forEach(function(n){
+        var el = field(n);
+        if (!el) return;
+        v[n] = el.type === "checkbox" ? el.checked : el.value.trim();
+      });
 
-      if (!name || !contact){
-        if (status){
-          status.textContent = "Please fill in your name and how we can reach you.";
-          status.style.color = "#e08b6a";
-        }
+      var bad = null;
+      setErr("name",""); setErr("phone",""); setErr("email",""); setErr("consent","");
+
+      if (!v.name){ setErr("name","Please tell us your name."); bad = bad || "name"; }
+      if (!v.phone || !PHONE.test(v.phone)){
+        setErr("phone","Please enter a phone number we can reach you on."); bad = bad || "phone";
+      }
+      if (v.email && !EMAIL.test(v.email)){
+        setErr("email","That email address doesn't look right."); bad = bad || "email";
+      }
+      if (!v.consent){ setErr("consent","Please confirm before sending."); bad = bad || "consent"; }
+
+      if (bad){
+        say("Please check the highlighted fields and try again.", "bad");
+        var el = field(bad);
+        if (el && el.focus) el.focus();
         return;
       }
-      var subject = encodeURIComponent("Free estimate — " + service + " — " + name);
+
+      /* ⚠ PONTO DE INTEGRAÇÃO — não há backend. Enquanto não houver, o pedido
+         vai por e-mail. Trocar este bloco por um fetch() quando existir API. */
+      var subject = encodeURIComponent("Free estimate request — " + (v.service || "General Remodeling"));
       var body = encodeURIComponent(
-        "Name: " + name + "\nContact: " + contact + "\nService: " + service +
-        "\n\nProject details:\n" + message
+        "Name: " + v.name +
+        "\nPhone: " + v.phone +
+        "\nEmail: " + (v.email || "—") +
+        "\nProperty location: " + (v.location || "—") +
+        "\nService needed: " + (v.service || "—") +
+        "\nPreferred contact: " + (v.contact || "—") +
+        "\n\nProject description:\n" + (v.details || "—")
       );
-      if (status){
-        status.textContent = "Opening your email app with the request ready to send.";
-        status.style.color = "";
-      }
-      window.location.href = "mailto:info@jfgeneralremodeling.com?subject=" + subject + "&body=" + body;
+      say("Your email app is opening with the request filled in — press send there to reach us.", "ok");
+      window.location.href = "mailto:[EMAIL ADDRESS]?subject=" + subject + "&body=" + body;
     });
   })();
 

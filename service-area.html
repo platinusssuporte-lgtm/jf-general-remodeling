@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a0a0b">
+<meta name="theme-color" content="#141414">
 
-<title>Service Area | JF General Remodeling — Philadelphia &amp; Nearby</title>
-<meta name="description" content="JF General Remodeling serves Philadelphia, Montgomery County, Delaware County, Bucks County and Camden County NJ. Free estimates across the area.">
+<title>Service Area | JF General Remodeling — Philadelphia, PA</title>
+<meta name="description" content="JF General Remodeling provides professional remodeling and property improvement services throughout Philadelphia and surrounding areas. Contact us to confirm availability.">
 <link rel="canonical" href="https://jf-general-remodeling.vercel.app/service-area">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="JF General Remodeling">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Service Area | JF General Remodeling — Philadelphia &amp; Nearby">
-<meta property="og:description" content="JF General Remodeling serves Philadelphia, Montgomery County, Delaware County, Bucks County and Camden County NJ. Free estimates across the area.">
+<meta property="og:title" content="Service Area | JF General Remodeling — Philadelphia, PA">
+<meta property="og:description" content="JF General Remodeling provides professional remodeling and property improvement services throughout Philadelphia and surrounding areas. Contact us to confirm availability.">
 <meta property="og:url" content="https://jf-general-remodeling.vercel.app/service-area">
 <meta property="og:image" content="https://jf-general-remodeling.vercel.app/assets/hero-after.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=4">
 </head>
 
 <body>
@@ -62,14 +62,14 @@
       <span class="brand-word">General&nbsp;Remodeling</span>
     </a>
     <nav class="nav-links" aria-label="Main">
-      <a href="/">Home</a>
+      <a href="/about">About</a>
       <a href="/services">Services</a>
       <a href="/projects">Projects</a>
       <a href="/before-after">Before <span class="amp">&amp;</span> After</a>
       <a href="/service-area" aria-current="page">Service Area</a>
       <a href="/contact">Contact</a>
     </nav>
-    <a href="/contact" class="nav-cta">Free Estimate</a>
+    <a href="/contact" class="nav-cta" data-magnetic>Get a Free Estimate</a>
     <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
       <span></span><span></span><span></span>
     </button>
@@ -77,7 +77,7 @@
 </header>
 
 <div class="nav-drawer" id="navDrawer" aria-hidden="true">
-  <a href="/">Home</a>
+  <a href="/about">About</a>
   <a href="/services">Services</a>
   <a href="/projects">Projects</a>
   <a href="/before-after">Before <span class="amp">&amp;</span> After</a>
@@ -88,34 +88,29 @@
 
 <main id="main">
 
-  <!-- ============ PAGE HERO ============ -->
   <section class="page-hero">
     <div class="container">
       <nav class="crumb" aria-label="Breadcrumb">
         <a href="/">Home</a> <span>/</span> <span>Service Area</span>
       </nav>
       <span class="eyebrow">Service Area</span>
-      <h1>Philadelphia and the counties around it.</h1>
-      <p class="lead">We work across the city and the surrounding suburbs on both sides of the river. If you are close to the edge of the map, ask anyway — we travel for the right project.</p>
+      <h1>Serving Philadelphia and Surrounding Areas</h1>
+      <p class="lead">JF General Remodeling provides professional remodeling and property improvement services throughout Philadelphia and nearby communities.</p>
     </div>
   </section>
 
-
-  <!-- ============ MAPA ============ -->
   <section class="service-area">
     <div class="container area-grid">
       <div class="area-copy" data-reveal>
         <span class="eyebrow eyebrow-light">Coverage</span>
-        <h2>Four counties, one crew.</h2>
-        <p>Estimates and site visits are free anywhere in the area below. For projects further out,
-        call us — depending on the scope and the schedule, we will still come take a look.</p>
-        <div class="area-tags">
-          <span><svg class="ic"><use href="#i-pin"/></svg>Philadelphia, PA</span>
-          <span><svg class="ic"><use href="#i-pin"/></svg>Montgomery County, PA</span>
-          <span><svg class="ic"><use href="#i-pin"/></svg>Delaware County, PA</span>
-          <span><svg class="ic"><use href="#i-pin"/></svg>Bucks County, PA</span>
-          <span><svg class="ic"><use href="#i-pin"/></svg>Camden County, NJ</span>
-          <span><svg class="ic"><use href="#i-pin"/></svg>Chester County, PA</span>
+        <h2>Not sure if we reach you?</h2>
+        <p>We work across Philadelphia and the communities around it. Rather than guess at a list
+        of towns, we would rather you ask — send us your address and we will confirm availability
+        for your location right away, at no cost and with no obligation.</p>
+        <!-- ⚠ Nenhuma cidade específica é afirmada aqui de propósito. Quando a JF
+             confirmar a lista real de cidades atendidas, ela entra neste bloco. -->
+        <div class="btn-row" style="margin-top:2rem">
+          <a href="/contact" class="btn btn-primary" data-magnetic>Check Service Availability</a>
         </div>
       </div>
       <div class="area-map" data-reveal>
@@ -128,41 +123,16 @@
     </div>
   </section>
 
-  <!-- ============ CIDADES ============ -->
-  <section class="proj">
-    <div class="container">
-      <div class="sec-head" data-reveal>
-        <span class="eyebrow">Towns we work in</span>
-        <h2>Some of the places we have been.</h2>
-        <p>Not a complete list — if your town is not here, it does not mean we do not go there.</p>
-      </div>
-      <ul class="towns" data-reveal>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Philadelphia, PA</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Upper Darby, PA</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Bensalem, PA</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Norristown, PA</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>King of Prussia, PA</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Conshohocken, PA</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Cherry Hill, NJ</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Camden, NJ</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Media, PA</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Ardmore, PA</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Bala Cynwyd, PA</li>
-        <li><svg class="ic"><use href="#i-pin"/></svg>Levittown, PA</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ============ CTA ============ -->
   <section class="cta-band">
     <div class="container" data-reveal>
       <span class="eyebrow eyebrow--c eyebrow-light">Let's get started</span>
-      <h2>Not sure if you're in range?</h2>
-      <p>Call or send a message with your address. We will tell you straight away, no obligation.</p>
+      <h2>Tell Us Where the Project Is</h2>
+      <p>Send the address and the room. We will confirm availability and book a free estimate.</p>
       <div class="btn-row">
-        <a href="/contact" class="btn btn-primary">Get a Free Estimate</a>
-        <a href="tel:+12150000000" class="btn btn-outline">Call (215) 000-0000</a>
+        <a href="/contact" class="btn btn-primary" data-magnetic>Get a Free Estimate</a>
+        <a href="/services" class="btn btn-outline">Explore Our Services</a>
       </div>
+      <p style="margin-top:1.6rem;font-size:.8rem;color:var(--muted)">Serving Philadelphia and Surrounding Areas</p>
     </div>
   </section>
 
@@ -177,32 +147,39 @@
           <span class="brand-mark">JF</span>
           <span class="brand-word">General&nbsp;Remodeling</span>
         </a>
-        <p>General remodeling for homes and commercial spaces across Philadelphia and nearby areas.
-        Finish carpentry, baseboards, drywall, painting, flooring and tile — with free estimates.</p>
+        <p>JF General Remodeling provides professional remodeling, drywall, painting, flooring,
+        tile and finish carpentry services in Philadelphia and surrounding areas.</p>
       </div>
       <div class="footer-col">
-        <h4>Pages</h4>
-        <a href="/">Home</a>
-        <a href="/services">Services</a>
+        <h4>Company</h4>
+        <a href="/about">About</a>
         <a href="/projects">Projects</a>
-        <a href="/before-after">Before <span class="amp">&amp;</span> After</a>
+        <a href="/before-after">Before &amp; After</a>
         <a href="/service-area">Service Area</a>
         <a href="/contact">Contact</a>
       </div>
       <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/services#finish-carpentry">Finish Carpentry</a>
+        <a href="/services#drywall">Drywall</a>
+        <a href="/services#painting">Painting</a>
+        <a href="/services#flooring">Flooring</a>
+        <a href="/services#tile">Tile</a>
+      </div>
+      <div class="footer-col">
         <h4>Get in touch</h4>
-        <a href="tel:+12150000000"><svg class="ic"><use href="#i-phone"/></svg>(215) 000-0000</a>
-        <a href="mailto:info@jfgeneralremodeling.com"><svg class="ic"><use href="#i-mail"/></svg>info@jfgeneralremodeling.com</a>
-        <span><svg class="ic"><use href="#i-pin"/></svg>Philadelphia, PA</span>
+        <span><svg class="ic"><use href="#i-phone"/></svg><span class="ph-data">[PHONE NUMBER]</span></span>
+        <span><svg class="ic"><use href="#i-mail"/></svg><span class="ph-data">[EMAIL ADDRESS]</span></span>
+        <span><svg class="ic"><use href="#i-pin"/></svg>Philadelphia, PA &amp; nearby areas</span>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© <span data-year></span> JF General Remodeling. All rights reserved.</p>
-      <p>Free estimates · Philadelphia &amp; nearby areas</p>
+      <p>Free estimates · Serving Philadelphia and surrounding areas</p>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js?v=3"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>

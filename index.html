@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a0a0b">
+<meta name="theme-color" content="#141414">
 
-<title>JF General Remodeling | Home Remodeling in Philadelphia, PA</title>
-<meta name="description" content="JF General Remodeling delivers finish carpentry, baseboards, drywall, painting, flooring and tile across Philadelphia and nearby areas. Free estimates, on time, done right.">
+<title>JF General Remodeling | Remodeling Services in Philadelphia</title>
+<meta name="description" content="JF General Remodeling provides drywall, painting, flooring, tile, baseboard, finish carpentry and general remodeling services in Philadelphia and surrounding areas. Request a free estimate.">
 <link rel="canonical" href="https://jf-general-remodeling.vercel.app/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="JF General Remodeling">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="JF General Remodeling | Home Remodeling in Philadelphia, PA">
-<meta property="og:description" content="Finish carpentry, drywall, painting, flooring and tile across Philadelphia and nearby areas. Free estimates.">
+<meta property="og:title" content="JF General Remodeling | Remodeling Services in Philadelphia">
+<meta property="og:description" content="JF General Remodeling provides drywall, painting, flooring, tile, baseboard, finish carpentry and general remodeling services in Philadelphia and surrounding areas. Request a free estimate.">
 <meta property="og:url" content="https://jf-general-remodeling.vercel.app/">
 <meta property="og:image" content="https://jf-general-remodeling.vercel.app/assets/hero-after.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -23,8 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/hero-before.jpg" fetchpriority="high">
-<link rel="stylesheet" href="css/style.css?v=3">
-
+<link rel="stylesheet" href="css/style.css?v=4">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -33,25 +32,19 @@
   "name":"JF General Remodeling",
   "url":"https://jf-general-remodeling.vercel.app/",
   "image":"https://jf-general-remodeling.vercel.app/assets/hero-after.jpg",
-  "description":"General remodeling contractor serving Philadelphia and nearby areas: finish carpentry, baseboards, drywall, painting, flooring and tile.",
-  "telephone":"+1-215-000-0000",
-  "email":"info@jfgeneralremodeling.com",
-  "areaServed":[
-    {"@type":"City","name":"Philadelphia"},
-    {"@type":"AdministrativeArea","name":"Montgomery County, PA"},
-    {"@type":"AdministrativeArea","name":"Delaware County, PA"},
-    {"@type":"AdministrativeArea","name":"Camden County, NJ"}
-  ],
+  "description":"General remodeling contractor serving Philadelphia and surrounding areas: finish carpentry, baseboards, drywall, painting, flooring and tile.",
   "address":{"@type":"PostalAddress","addressLocality":"Philadelphia","addressRegion":"PA","addressCountry":"US"},
+  "areaServed":{"@type":"City","name":"Philadelphia"},
   "hasOfferCatalog":{
     "@type":"OfferCatalog","name":"Remodeling services",
     "itemListElement":[
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Finish Carpentry and Molding"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Baseboard Installation"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Drywall Installation and Repair"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Interior and Exterior Painting"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Painting Services"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Flooring Installation"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tile and Stone Installation"}}
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tile Installation"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"General Remodeling"}}
     ]
   }
 }
@@ -95,14 +88,14 @@
       <span class="brand-word">General&nbsp;Remodeling</span>
     </a>
     <nav class="nav-links" aria-label="Main">
-      <a href="/" aria-current="page">Home</a>
+      <a href="/about">About</a>
       <a href="/services">Services</a>
       <a href="/projects">Projects</a>
       <a href="/before-after">Before <span class="amp">&amp;</span> After</a>
       <a href="/service-area">Service Area</a>
       <a href="/contact">Contact</a>
     </nav>
-    <a href="/contact" class="nav-cta">Free Estimate</a>
+    <a href="/contact" class="nav-cta" data-magnetic>Get a Free Estimate</a>
     <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
       <span></span><span></span><span></span>
     </button>
@@ -110,7 +103,7 @@
 </header>
 
 <div class="nav-drawer" id="navDrawer" aria-hidden="true">
-  <a href="/" aria-current="page">Home</a>
+  <a href="/about">About</a>
   <a href="/services">Services</a>
   <a href="/projects">Projects</a>
   <a href="/before-after">Before <span class="amp">&amp;</span> After</a>
@@ -124,268 +117,314 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
     <div class="hero-sticky">
-
       <div class="hero-bg">
         <div class="hero-bg-tex tex-blueprint"></div>
         <div class="hero-bg-tex tex-light"></div>
       </div>
-
       <div class="hero-frame">
         <div class="hero-media" id="heroMedia">
           <div class="media-plate plate-before"><img src="assets/hero-before.jpg" alt="Bathroom before the remodel"></div>
-          <div class="media-plate plate-during"><img src="assets/svc-drywall.jpg" alt="Remodel in progress — drywall framing"></div>
-          <div class="media-plate plate-after"><img src="assets/hero-after.jpg" alt="Bathroom finished by JF General Remodeling"></div>
+          <div class="media-plate plate-during"><img src="assets/svc-drywall.jpg" alt="Remodel in progress — drywall framing" loading="lazy" decoding="async"></div>
+          <div class="media-plate plate-after"><img src="assets/hero-after.jpg" alt="Bathroom finished by JF General Remodeling" loading="lazy" decoding="async"></div>
           <div class="media-scrim"></div>
           <div class="media-scan"></div>
         </div>
       </div>
-
       <div class="hero-copy">
-        <span class="eyebrow">Philadelphia, PA · Since day one</span>
+        <span class="eyebrow">Serving Philadelphia and Nearby Areas</span>
         <h1 class="hero-title" id="heroTitle">
-          <span data-i="0" class="active">The transformation<br>starts in the details.</span>
-          <span data-i="1">Remodeling that adds<br>value to your home.</span>
-          <span data-i="2">High-end finishes,<br>start to finish.</span>
-          <span data-i="3">Quality you can see<br>in every room.</span>
+          <span data-i="0" class="active">Expert Remodeling.<br>Built Around Your Vision.</span>
+          <span data-i="1">Professional Remodeling<br>for Better Spaces.</span>
+          <span data-i="2">Details Make<br>the Difference.</span>
+          <span data-i="3">Your Vision.<br>Carefully Built.</span>
           <span data-i="4" class="is-logo">JF General<br>Remodeling</span>
         </h1>
-
         <ul class="hero-checklist" id="heroChecklist">
-          <li>Finish Carpentry</li>
-          <li>Baseboards</li>
-          <li>Drywall</li>
-          <li>Painting</li>
-          <li>Flooring</li>
-          <li>Tile and Stone</li>
-          <li>Full Remodels</li>
-          <li>Free Estimates</li>
+          <li>Free Estimates</li><li>Professional Service</li><li>Quality Craftsmanship</li>
+          <li>Drywall</li><li>Painting</li><li>Flooring</li><li>Tile</li><li>Finish Carpentry</li>
         </ul>
-
         <p class="hero-institutional" id="heroInstitutional">
-          JF General Remodeling handles complete remodeling work — finish carpentry, baseboards,
-          drywall, painting, flooring and tile. We serve Philadelphia and nearby areas with careful
-          craftsmanship, dependable scheduling and estimates that are always free.
+          JF General Remodeling provides dependable remodeling, drywall, painting, flooring, tile
+          and finish carpentry services throughout Philadelphia and surrounding areas.
         </p>
-
-        <div class="hero-scroll-cue">
-          <span>Scroll to see the transformation</span>
-          <i></i>
-        </div>
+        <div class="hero-scroll-cue"><span>Scroll to see the transformation</span><i></i></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ INTRO ============ -->
+  <!-- ============ TRUST ============ -->
+  <section class="trust" aria-label="What we offer">
+    <div class="container">
+      <ul>
+        <li><svg class="ic"><use href="#i-check"/></svg>Free Estimates</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Quality Workmanship</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Residential Remodeling</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Philadelphia Area Service</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Clear Communication</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Attention to Detail</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="phrase">
+    <div class="container"><p data-lines><span class="line-mask"><span>Better Spaces Begin</span></span><span class="line-mask"><span>With Better <em>Craftsmanship.</em></span></span></p></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
   <section class="intro">
     <div class="container intro-grid">
       <div class="intro-copy" data-reveal>
-        <span class="eyebrow">Who we are</span>
-        <h2>A remodeling crew that treats your home like a finished piece.</h2>
-        <p>JF General Remodeling is a general contractor working across Philadelphia and the
-        surrounding counties. We take on residential and commercial projects — a single room, a full
-        floor, or an entire property — and we handle the work from demolition through final finish.</p>
-        <p>The difference shows up where most people stop looking: the line where the baseboard meets
-        the floor, the seam that disappears into the drywall, the tile that lines up across the whole
-        room. That is the part we care about most.</p>
+        <span class="eyebrow">About the company</span>
+        <h2>Remodeling That Makes Your Space Work Better.</h2>
+        <p>JF General Remodeling helps homeowners and property owners improve their spaces with
+        reliable workmanship, careful finishing and personalized service. From drywall repair and
+        painting to flooring, tile, trim and complete remodeling improvements, every project is
+        handled with attention to detail.</p>
+        <p>We proudly serve Philadelphia and surrounding communities and provide free estimates
+        for new projects.</p>
         <div class="intro-stats">
           <div class="intro-stat"><b>Free</b><span>Estimates &amp; site visits</span></div>
-          <div class="intro-stat"><b>4</b><span>Counties served</span></div>
-          <div class="intro-stat"><b>6</b><span>Specialty services</span></div>
+          <div class="intro-stat"><b>7</b><span>Specialty services</span></div>
+          <div class="intro-stat"><b>Local</b><span>Philadelphia &amp; nearby</span></div>
+        </div>
+        <div class="btn-row" style="margin-top:2.2rem">
+          <a href="/about" class="btn btn-outline">More about us</a>
         </div>
       </div>
       <div class="intro-media" data-reveal>
-        <img src="assets/gal-05-marmore.jpg" alt="Close-up of finished marble tile work" loading="lazy" decoding="async">
+        <img src="assets/gal-05-marmore.jpg" alt="Close-up of finished stone and tile work" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
 
-  <!-- ============ CARDS 3D ============ -->
-  <section class="overview">
+  <!-- ============ SERVIÇOS 3D ============ -->
+  <section class="proj">
     <div class="container">
       <div class="sec-head sec-head--c" data-reveal>
-        <span class="eyebrow eyebrow--c">What we do</span>
-        <h2>Everything the job needs, under one crew.</h2>
-        <p>No juggling four different contractors. We scope it, schedule it and finish it.</p>
+        <span class="eyebrow eyebrow--c">Services</span>
+        <h2>Professional Remodeling Services</h2>
+        <p>From small repairs to complete interior improvements, we provide practical remodeling
+        solutions tailored to your property.</p>
       </div>
-
-      <div class="tilt-grid">
-        <div class="tilt-card" data-reveal>
-          <div class="tilt-card-glare"></div>
-          <div class="tilt-card-inner">
-            <span class="tilt-num">01</span>
-            <svg class="tilt-icon"><use href="#i-building"/></svg>
-            <h3>Who We Are</h3>
-            <p>Specialists in general remodeling, delivering complete solutions for homes and
-            commercial spaces with a high standard of finish.</p>
-            <a href="/service-area" class="link-arrow">Where we work <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </div>
-
-        <div class="tilt-card" data-reveal>
-          <div class="tilt-card-glare"></div>
-          <div class="tilt-card-inner">
-            <span class="tilt-num">02</span>
-            <svg class="tilt-icon"><use href="#i-frame"/></svg>
-            <h3>Our Services</h3>
-            <ul class="overview-list">
-              <li><svg class="ic"><use href="#i-check"/></svg>Finish Carpentry and Molding</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>Baseboard Installation</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>Drywall Install and Repair</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>Interior and Exterior Painting</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>Flooring Installation</li>
-              <li><svg class="ic"><use href="#i-check"/></svg>Tile and Stone Installation</li>
-            </ul>
-            <a href="/services" class="link-arrow">See all services <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </div>
-
-        <div class="tilt-card" data-reveal>
-          <div class="tilt-card-glare"></div>
-          <div class="tilt-card-inner">
-            <span class="tilt-num">03</span>
-            <svg class="tilt-icon"><use href="#i-shield"/></svg>
-            <h3>Why Choose JF</h3>
-            <div class="why-grid">
-              <span><svg class="ic"><use href="#i-check"/></svg>Personal service</span>
-              <span><svg class="ic"><use href="#i-check"/></svg>Skilled crew</span>
-              <span><svg class="ic"><use href="#i-check"/></svg>Quality materials</span>
-              <span><svg class="ic"><use href="#i-check"/></svg>On schedule</span>
-              <span><svg class="ic"><use href="#i-check"/></svg>Clean finish</span>
-              <span><svg class="ic"><use href="#i-check"/></svg>Free estimates</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="tilt-card tilt-card-area" data-reveal>
-          <div class="tilt-card-glare"></div>
-          <div class="tilt-card-inner">
-            <span class="tilt-num">04</span>
-            <svg class="tilt-icon"><use href="#i-pin"/></svg>
-            <h3>Service Area</h3>
-            <p>Philadelphia and nearby areas across PA and southern NJ.</p>
-            <a href="/service-area" class="link-arrow">Check your area <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </div>
+      <div class="c3d-grid">
+        <article class="c3d" data-reveal>
+          <a class="c3d__in" href="/services#finish-carpentry" aria-label="Finish Carpentry and Molding — view service">
+            <span class="c3d__tex m-wood" aria-hidden="true"></span>
+            <span class="c3d__veil" aria-hidden="true"></span>
+            <span class="c3d__arch" aria-hidden="true"></span>
+            <span class="c3d__light" aria-hidden="true"></span>
+            <span class="c3d__body">
+              <span class="c3d__cat">Carpentry</span>
+              <svg class="c3d__icon" aria-hidden="true"><use href="#i-frame"/></svg>
+              <span class="c3d__t">Finish Carpentry and Molding</span>
+              <span class="c3d__d">Detailed finishing work that enhances the character, value and appearance of your interior spaces.</span>
+              <span class="c3d__cta">View Service <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
+        </article>
+        <article class="c3d" data-reveal>
+          <a class="c3d__in" href="/services#baseboards" aria-label="Baseboard Installation — view service">
+            <span class="c3d__tex m-base" aria-hidden="true"></span>
+            <span class="c3d__veil" aria-hidden="true"></span>
+            <span class="c3d__arch" aria-hidden="true"></span>
+            <span class="c3d__light" aria-hidden="true"></span>
+            <span class="c3d__body">
+              <span class="c3d__cat">Trim</span>
+              <svg class="c3d__icon" aria-hidden="true"><use href="#i-baseboard"/></svg>
+              <span class="c3d__t">Baseboard Installation</span>
+              <span class="c3d__d">Professional baseboard installation with clean alignment, accurate cuts and a polished final result.</span>
+              <span class="c3d__cta">View Service <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
+        </article>
+        <article class="c3d" data-reveal>
+          <a class="c3d__in" href="/services#drywall" aria-label="Drywall Installation and Repair — view service">
+            <span class="c3d__tex m-plaster" aria-hidden="true"></span>
+            <span class="c3d__veil" aria-hidden="true"></span>
+            <span class="c3d__arch" aria-hidden="true"></span>
+            <span class="c3d__light" aria-hidden="true"></span>
+            <span class="c3d__body">
+              <span class="c3d__cat">Walls</span>
+              <svg class="c3d__icon" aria-hidden="true"><use href="#i-drywall"/></svg>
+              <span class="c3d__t">Drywall Installation and Repair</span>
+              <span class="c3d__d">Drywall installation, patching and repairs prepared for a smooth, professional finish.</span>
+              <span class="c3d__cta">View Service <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
+        </article>
+        <article class="c3d" data-reveal>
+          <a class="c3d__in" href="/services#painting" aria-label="Painting Services — view service">
+            <span class="c3d__tex m-paint" aria-hidden="true"></span>
+            <span class="c3d__veil" aria-hidden="true"></span>
+            <span class="c3d__arch" aria-hidden="true"></span>
+            <span class="c3d__light" aria-hidden="true"></span>
+            <span class="c3d__body">
+              <span class="c3d__cat">Finishes</span>
+              <svg class="c3d__icon" aria-hidden="true"><use href="#i-paint"/></svg>
+              <span class="c3d__t">Painting Services</span>
+              <span class="c3d__d">Interior and exterior painting focused on proper preparation, clean application and lasting results.</span>
+              <span class="c3d__cta">View Service <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
+        </article>
+        <article class="c3d" data-reveal>
+          <a class="c3d__in" href="/services#flooring" aria-label="Flooring Installation — view service">
+            <span class="c3d__tex m-floor" aria-hidden="true"></span>
+            <span class="c3d__veil" aria-hidden="true"></span>
+            <span class="c3d__arch" aria-hidden="true"></span>
+            <span class="c3d__light" aria-hidden="true"></span>
+            <span class="c3d__body">
+              <span class="c3d__cat">Floors</span>
+              <svg class="c3d__icon" aria-hidden="true"><use href="#i-floor"/></svg>
+              <span class="c3d__t">Flooring Installation</span>
+              <span class="c3d__d">Professional flooring installation designed to improve comfort, durability and visual appeal.</span>
+              <span class="c3d__cta">View Service <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
+        </article>
+        <article class="c3d" data-reveal>
+          <a class="c3d__in" href="/services#tile" aria-label="Tile Installation — view service">
+            <span class="c3d__tex m-tile" aria-hidden="true"></span>
+            <span class="c3d__veil" aria-hidden="true"></span>
+            <span class="c3d__arch" aria-hidden="true"></span>
+            <span class="c3d__light" aria-hidden="true"></span>
+            <span class="c3d__body">
+              <span class="c3d__cat">Surfaces</span>
+              <svg class="c3d__icon" aria-hidden="true"><use href="#i-tile"/></svg>
+              <span class="c3d__t">Tile Installation</span>
+              <span class="c3d__d">Careful tile installation for floors, walls, kitchens, bathrooms and other interior areas.</span>
+              <span class="c3d__cta">View Service <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
+        </article>
+        <article class="c3d" data-reveal>
+          <a class="c3d__in" href="/services#general" aria-label="General Remodeling — view service">
+            <span class="c3d__tex m-general" aria-hidden="true"></span>
+            <span class="c3d__veil" aria-hidden="true"></span>
+            <span class="c3d__arch" aria-hidden="true"></span>
+            <span class="c3d__light" aria-hidden="true"></span>
+            <span class="c3d__body">
+              <span class="c3d__cat">Full Scope</span>
+              <svg class="c3d__icon" aria-hidden="true"><use href="#i-building"/></svg>
+              <span class="c3d__t">General Remodeling</span>
+              <span class="c3d__d">Coordinated improvements and remodeling services created around the needs of your property.</span>
+              <span class="c3d__cta">View Service <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ SERVIÇOS (resumo) ============ -->
+  <section class="phrase">
+    <div class="container"><p data-lines><span class="line-mask"><span>Every Surface</span></span><span class="line-mask"><span>Deserves <em>Attention.</em></span></span></p></div>
+  </section>
+
+  <!-- ============ PROCESSO ============ -->
+  <section class="process">
+    <div class="container">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow">The process</span>
+        <h2>A Clear Process From Estimate to Completion</h2>
+      </div>
+      <div class="steps">
+        <article class="step" data-reveal>
+          <span class="step__n">01</span>
+          <h3>Tell Us About Your Project</h3>
+          <p>Share your remodeling needs, property details and preferred timeline.</p>
+        </article>
+        <article class="step" data-reveal>
+          <span class="step__n">02</span>
+          <h3>Schedule a Free Estimate</h3>
+          <p>We review the project, discuss options and evaluate the work required.</p>
+        </article>
+        <article class="step" data-reveal>
+          <span class="step__n">03</span>
+          <h3>Receive a Project Proposal</h3>
+          <p>You receive a clear overview of the recommended services and project scope.</p>
+        </article>
+        <article class="step" data-reveal>
+          <span class="step__n">04</span>
+          <h3>Professional Execution</h3>
+          <p>The work is completed with attention to preparation, organization and finishing.</p>
+        </article>
+        <article class="step" data-reveal>
+          <span class="step__n">05</span>
+          <h3>Final Review</h3>
+          <p>We review the completed work and confirm the project is ready for delivery.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJETOS ============ -->
   <section class="proj">
     <div class="container">
       <div class="sec-head" data-reveal>
-        <span class="eyebrow">Services</span>
-        <h2>Six specialties, one standard.</h2>
-        <p>Each one has its own page with what is included, how we work and what to expect.</p>
-      </div>
-
-      <div class="svc-grid">
-        <article class="svc" data-reveal>
-          <div class="svc-shot"><span class="svc-n">01</span><img src="assets/svc-molduras.jpg" alt="Finished crown molding and trim" loading="lazy" decoding="async"></div>
-          <div class="svc-body">
-            <h3>Finish Carpentry and Molding</h3>
-            <p>Crown molding, casing and trim cut and fitted so the joints stay tight for good.</p>
-            <a href="/services#finish-carpentry" class="link-arrow">Details <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </article>
-
-        <article class="svc" data-reveal>
-          <div class="svc-shot"><span class="svc-n">02</span><img src="assets/svc-rodapes.jpg" alt="Baseboard installation" loading="lazy" decoding="async"></div>
-          <div class="svc-body">
-            <h3>Baseboard Installation</h3>
-            <p>A clean transition between floor and wall, scribed to the room instead of forced into it.</p>
-            <a href="/services#baseboards" class="link-arrow">Details <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </article>
-
-        <article class="svc" data-reveal>
-          <div class="svc-shot"><span class="svc-n">03</span><img src="assets/svc-drywall.jpg" alt="Drywall installation and repair"></div>
-          <div class="svc-body">
-            <h3>Drywall Install and Repair</h3>
-            <p>Framing, hanging, taping and finishing — seams sanded until the wall reads as one surface.</p>
-            <a href="/services#drywall" class="link-arrow">Details <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </article>
-
-        <article class="svc" data-reveal>
-          <div class="svc-shot"><span class="svc-n">04</span><img src="assets/svc-pintura.jpg" alt="Residential and commercial painting" loading="lazy" decoding="async"></div>
-          <div class="svc-body">
-            <h3>Interior and Exterior Painting</h3>
-            <p>Proper prep, quality product and even coverage. Most complaints about paint start before the paint.</p>
-            <a href="/services#painting" class="link-arrow">Details <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </article>
-
-        <article class="svc" data-reveal>
-          <div class="svc-shot"><span class="svc-n">05</span><img src="assets/svc-pisos.jpg" alt="Flooring installation" loading="lazy" decoding="async"></div>
-          <div class="svc-body">
-            <h3>Flooring Installation</h3>
-            <p>Subfloor checked and leveled first, then hardwood, laminate or vinyl laid to line up room to room.</p>
-            <a href="/services#flooring" class="link-arrow">Details <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </article>
-
-        <article class="svc" data-reveal>
-          <div class="svc-shot"><span class="svc-n">06</span><img src="assets/svc-revestimentos.jpg" alt="Tile and stone installation" loading="lazy" decoding="async"></div>
-          <div class="svc-body">
-            <h3>Tile and Stone Installation</h3>
-            <p>Layout planned before the first tile goes down, so cuts land where they belong.</p>
-            <a href="/services#tile" class="link-arrow">Details <svg><use href="#i-arrow"/></svg></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROJETOS (prévia) ============ -->
-  <section class="proj" style="padding-top:0">
-    <div class="container">
-      <div class="sec-head" data-reveal>
         <span class="eyebrow">Recent work</span>
-        <h2>A bathroom taken down to the studs.</h2>
-        <p>One project, start to finish — the same sequence we follow on every job.</p>
+        <h2>Recent Remodeling Work</h2>
+        <p>A bathroom taken down to the studs and brought back, plus kitchen and flooring work.</p>
       </div>
-
       <div class="proj-grid">
         <a class="proj-item proj-item--wide" href="/projects" data-reveal>
           <img src="assets/gal-04-banheiro-pronto.jpg" alt="Finished bathroom remodel" loading="lazy" decoding="async">
-          <span class="proj-cap"><i>Delivered</i><b>Full bathroom remodel</b></span>
+          <span class="proj-cap"><i>General Remodeling</i><b>Full bathroom remodel</b></span>
         </a>
         <a class="proj-item" href="/projects" data-reveal>
-          <img src="assets/gal-02-demolicao.jpg" alt="Full demolition of the room" loading="lazy" decoding="async">
-          <span class="proj-cap"><i>Step 01</i><b>Demolition</b></span>
+          <img src="assets/gal-02-demolicao.jpg" alt="Room during demolition" loading="lazy" decoding="async">
+          <span class="proj-cap"><i>General Remodeling</i><b>Demolition</b></span>
         </a>
         <a class="proj-item" href="/projects" data-reveal>
           <img src="assets/gal-03-drywall.jpg" alt="Drywall and waterproofing" loading="lazy" decoding="async">
-          <span class="proj-cap"><i>Step 02</i><b>Drywall and waterproofing</b></span>
+          <span class="proj-cap"><i>Drywall</i><b>Drywall and waterproofing</b></span>
         </a>
         <a class="proj-item" href="/projects" data-reveal>
-          <img src="assets/gal-06-cozinha.jpg" alt="Complete kitchen remodel" loading="lazy" decoding="async">
-          <span class="proj-cap"><i>Project</i><b>Kitchen remodel</b></span>
+          <img src="assets/gal-06-cozinha.jpg" alt="Kitchen remodel" loading="lazy" decoding="async">
+          <span class="proj-cap"><i>General Remodeling</i><b>Kitchen remodel</b></span>
         </a>
         <a class="proj-item" href="/projects" data-reveal>
           <img src="assets/gal-07-sala.jpg" alt="Living room flooring" loading="lazy" decoding="async">
-          <span class="proj-cap"><i>Project</i><b>Living room flooring</b></span>
+          <span class="proj-cap"><i>Flooring</i><b>Living room flooring</b></span>
         </a>
       </div>
-
       <div class="btn-row" style="margin-top:2.5rem" data-reveal>
-        <a href="/projects" class="btn btn-outline">See the full gallery</a>
+        <a href="/projects" class="btn btn-outline">See all projects</a>
         <a href="/before-after" class="btn btn-outline">Before &amp; after</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ CTA ============ -->
+  <section class="testi">
+    <div class="container">
+      <div class="sec-head sec-head--c" data-reveal>
+        <span class="eyebrow eyebrow--c">Testimonials</span>
+        <h2>What our customers say.</h2>
+      </div>
+      <!-- ⚠ Sem depoimentos reais até agora. Nada foi inventado: quando chegarem
+           textos e autorizações, substituir este bloco pelos cards. -->
+      <div class="testi-empty" data-reveal>
+        <svg class="ic"><use href="#i-check"/></svg>
+        <h3>Reviews coming soon.</h3>
+        <p>We would rather show nothing than show something we made up. Real customer
+        reviews will appear here as soon as we have them in writing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="phrase">
+    <div class="container"><p data-lines><span class="line-mask"><span>Remodel</span></span><span class="line-mask"><span>With <em>Confidence.</em></span></span></p></div>
+  </section>
+
   <section class="cta-band">
     <div class="container" data-reveal>
       <span class="eyebrow eyebrow--c eyebrow-light">Let's get started</span>
-      <h2>Tell us about the room. We'll tell you what it takes.</h2>
-      <p>Free estimate, free site visit, and a straight answer about scope, sequence and timing.</p>
+      <h2>Ready to Improve Your Space?</h2>
+      <p>Tell us about your remodeling project and receive a free estimate from JF General Remodeling.</p>
       <div class="btn-row">
-        <a href="/contact" class="btn btn-primary">Get a Free Estimate</a>
-        <a href="tel:+12150000000" class="btn btn-outline">Call (215) 000-0000</a>
+        <a href="/contact" class="btn btn-primary" data-magnetic>Get a Free Estimate</a>
+        <a href="/services" class="btn btn-outline">Explore Our Services</a>
       </div>
+      <p style="margin-top:1.6rem;font-size:.8rem;color:var(--muted)">Serving Philadelphia and Surrounding Areas</p>
     </div>
   </section>
 
@@ -400,32 +439,39 @@
           <span class="brand-mark">JF</span>
           <span class="brand-word">General&nbsp;Remodeling</span>
         </a>
-        <p>General remodeling for homes and commercial spaces across Philadelphia and nearby areas.
-        Finish carpentry, baseboards, drywall, painting, flooring and tile — with free estimates.</p>
+        <p>JF General Remodeling provides professional remodeling, drywall, painting, flooring,
+        tile and finish carpentry services in Philadelphia and surrounding areas.</p>
       </div>
       <div class="footer-col">
-        <h4>Pages</h4>
-        <a href="/">Home</a>
-        <a href="/services">Services</a>
+        <h4>Company</h4>
+        <a href="/about">About</a>
         <a href="/projects">Projects</a>
-        <a href="/before-after">Before <span class="amp">&amp;</span> After</a>
+        <a href="/before-after">Before &amp; After</a>
         <a href="/service-area">Service Area</a>
         <a href="/contact">Contact</a>
       </div>
       <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/services#finish-carpentry">Finish Carpentry</a>
+        <a href="/services#drywall">Drywall</a>
+        <a href="/services#painting">Painting</a>
+        <a href="/services#flooring">Flooring</a>
+        <a href="/services#tile">Tile</a>
+      </div>
+      <div class="footer-col">
         <h4>Get in touch</h4>
-        <a href="tel:+12150000000"><svg class="ic"><use href="#i-phone"/></svg>(215) 000-0000</a>
-        <a href="mailto:info@jfgeneralremodeling.com"><svg class="ic"><use href="#i-mail"/></svg>info@jfgeneralremodeling.com</a>
-        <span><svg class="ic"><use href="#i-pin"/></svg>Philadelphia, PA</span>
+        <span><svg class="ic"><use href="#i-phone"/></svg><span class="ph-data">[PHONE NUMBER]</span></span>
+        <span><svg class="ic"><use href="#i-mail"/></svg><span class="ph-data">[EMAIL ADDRESS]</span></span>
+        <span><svg class="ic"><use href="#i-pin"/></svg>Philadelphia, PA &amp; nearby areas</span>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© <span data-year></span> JF General Remodeling. All rights reserved.</p>
-      <p>Free estimates · Philadelphia &amp; nearby areas</p>
+      <p>Free estimates · Serving Philadelphia and surrounding areas</p>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js?v=3"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>
